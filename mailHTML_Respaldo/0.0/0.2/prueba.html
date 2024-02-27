@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla de Correo</title>
+<style>
+  /* Estilos generales */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: segoe ui;
+    background-color: #FFFFFF; /* Fondo de abajo */
+  }
+
+  /* Fondo gris para todo el contenido */
+  .content-background {
+    background-color: #FFFFFF; /* Fondo arriba*/
+    padding: 10px; /* estrecho vertical */
+  }
+
+  /* Borde alrededor del contenido */
+  .content-border {
+    border: 10px solid #FFFFFF; /* Borde gris */
+    border-radius: 7px; /* Bordes redondeados */
+    padding: 10px; /* mover arriba o abajo */
+  }
+
+  /* Contenedor principal */
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0; /* Eliminamos el padding aquí */
+    background-color: #F2F2F2;/* Fondo del html*/
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  /* Encabezado */
+  .header {
+    display: flex; /* Alineamos elementos en línea */
+    align-items: center; /* Centramos verticalmente */
+    justify-content: space-between; /* Espacio entre elementos */
+    margin-bottom: 0; /* Ajustamos el margen aquí */
+    padding: 10px; /* Agregamos padding aquí */
+  }
+
+  /* Logotipos en el encabezado */
+  .logo {
+    margin-right: 1px; /* Margen entre imagen y texto */
+  }
+
+  /* Título */
+  .title {
+    background-color: #214780; /* Azul */
+    color: #ffffff; /* Texto en blanco */
+    font-size: 10px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 0; /* Ajustamos el margen aquí */
+  }
+
+  /* Contenedor del cuerpo */
+  .body-container {
+    border-radius: 1px;
+    padding: 17px; /* Ajusta el margen interno */
+    margin: 7px 0; /* Margen superior e inferior */
+  }
+
+  /* Cuerpo del correo */
+  .body-content {
+    background-color: #FBFCFC; /* Fondo Cuerpo*/
+    border-radius: 10px;
+    padding: 5px; /* Margen interno */
+  }
+
+  /* Espacio entre cuerpos */
+  .body-space {
+    margin-bottom: 20px; /* Espacio entre cuerpos */
+  }
+
+  /* Pie de página */
+  .footer {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    background-color: #F2F2F2; /* Fondo pie pagina */
+    color: #ffffff; /* Texto en blanco */
+  }
+
+  .link {
+    margin: 3px 0; 
+    font-size: 10px;
+  }
+
+  /* Media query para dispositivos móviles */
+  @media screen and (max-width: 600px) {
+    .container {
+      max-width: 200%; /*  dispositivos móviles */
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="content-background">
+    <div class="content-border">
+      <div class="container">
+        <div class="header"> 
+          <div>
+            <img class="logo" href='https://postimg.cc/FY7fyT3k' target='_blank'>
+            <img src='https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png' border='0' alt='LOGO-ETB-1' width="70">
+            <img class="logo logo-second" href='https://postimages.org/' target='_blank'>
+            <img src='https://i.postimg.cc/Vk4bhC7H/VP-Empresas-y-Ciudades-Inteligentes-1.png' border='0' alt='VP-Empresas-y-Ciudades-Inteligentes-1' alt="Logo 2" width="270">
+          </div>   
+          <p style="margin: 3px 0; color: black; font-size: 20px;">Direccion Control y Gestion Operativa<br><span style="font-weight: bold;">Grupo Inteligencia Comercial</span></p>
+        </div>
+        <div class="title">
+          <h1>Proyecciones de Ingresos</h1>
+        </div>
+        <div class="body-container">
+          <div class="body-content">
+            <p>
+              Buen día se comparte archivo de la PDC de <br>
+              <hr>
+              ------Cuerpo1-----------------
+            </p>
+          </div>
+          <!-- Espacio entre cuerpos -->
+          <div class="body-space"></div>
+          <!-- Segundo cuerpo de correo duplicado -->
+          <div class="body-content">
+            <p>     
+              <strong>Cierre Mes Anterior</strong><br>
+              <hr>--------Cuerpo2--
+            </p>
+          </div>
+          <!-- Fin del segundo cuerpo de correo duplicado -->
+        </div>
+        <div class="footer">
+          <img href='https://postimg.cc/FY7fyT3k' target='_blank'>
+          <img src='https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png' border='0' alt='LOGO-ETB-1' width="50">
+          <div style="flex-grow: 1;"> <!-- Añade esta línea -->
+            <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Empresa de Telecomunicaciones de Bogotá S.A.</p>
+            <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Direccion Control y Gestion Operativa</p>
+            <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Grupo Inteligencia Comercial</p>
+            <p class="link" style="text-align: right;"> <!-- Añade text-align: right; aquí -->
+              <a href="https://etb.com/Empresas/home.aspx">Empresas y Ciudades Inteligentes</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

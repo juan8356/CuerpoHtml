@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla de Correo</title>
+<style>
+  /* Estilos generales */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: segoe ui;
+    background-color: #FBFCFC;
+  }
+
+  /* Fondo todo el contenido */
+  .content-background {
+    background-color: #FBFCFC;
+    padding: 10px;
+  }
+
+  /* Borde alrededor del contenido */
+  .content-border {
+    max-width: 1000px; /* Ancho máximo de la tabla */
+    margin: 0 auto; /* Centrar la tabla en la página */
+    border: 10px solid #FBFCFC;
+    border-radius: 7px;
+    padding: 10px;
+  }
+
+  /*principal */
+  .container {
+    width: 100%;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 auto; /* Centrar horizontalmente */
+    text-align: center; /* Centrar contenido en dispositivos móviles */
+}
+
+  .header {
+    display: table-row;
+    width: 300% ;
+  }
+
+  /* logoHeader*/
+  .logo-container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .logo-first {
+  max-width: 100px; /* Tamaño máximo para la primera imagen */
+  height: auto; /* Mantener la proporción de aspecto */
+}
+
+/* Estilos para la segunda imagen */
+.logo-second {
+  max-width: 250px; /* Tamaño máximo para la segunda imagen */
+  height: auto; /* Mantener la proporción de aspecto */
+}
+  
+
+  .title {
+    background-color: #214780;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0;
+    width: 700px; 
+  }
+
+  /* Contenedor del cuerpo */
+  .body-container {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  /* Cuerpo del correo */
+  .body-content {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 1px;
+    width: 700px; /
+  }
+
+  .body-content1 {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 30px;
+    width: 700px; /
+  }
+
+  .body-space {
+    margin-bottom: 15px;
+  }
+  .footer {
+    display: table-row;
+    width: 1000%;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+  .link {
+    margin: 3px 0;
+    font-size: 10px;
+  }
+  .blue-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color:#214780; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    text-decoration: none; /* Elimina subrayado de enlace */
+    border: 2px solid #214780; /* Borde azul */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 10px;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+  }
+  .blue-button:hover {
+    background-color: #005baa; /* Color de fondo azul más oscuro */
+  }
+  
+  .cobertura-img {
+    max-width: 100%; /* La imagen se ajustará automáticamente al ancho del contenedor */
+    height: auto;
+  }
+
+  /* MOVILES */
+  @media (max-width: 1000px) {
+    .header {
+      display: block;
+      text-align: center;
+    }
+    .cobertura-img {
+      max-width: 600px;
+      width: 100%; /* Para evitar que la imagen se estire más allá de 100px */
+    }
+    .logo-container {
+      display: block;
+      text-align: center;
+    }
+
+    .logo.logo-first {
+      width: 30%;
+    }
+
+    .logo.logo-second {
+      width: 70%;
+    }
+
+    .title {
+      font-size: 10px;
+    }
+
+    .blue-button {
+      color: #fff !important;
+    }
+  }
+</style>
+</head>
+<body>
+  <table class="content-background">
+    <tr>
+      <td class="content-border">
+        <table class="container">
+          <tr>
+            <td class="header">
+              <table class="logo-container">
+                <tr>
+                  <td>
+                    <img class="logo logo-first" src="https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png" border="0" alt="LOGO-ETB-1">
+                  </td>
+                  <td>
+                    <img class="logo logo-second" src="https://i.postimg.cc/Vk4bhC7H/VP-Empresas-y-Ciudades-Inteligentes-1.png" border="0" alt="VP-Empresas-y-Ciudades-Inteligentes-1">
+                  </td>
+                  <td class="text-container">
+                    <div class="text-content">
+                      <p>Dirección Control y Gestión Operativa</p>
+                      <p><strong>Grupo Inteligencia Comercial</strong></p>
+                    </div>
+                  </td>
+                </tr>
+                
+              </table>
+              
+             
+              
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              <h1>Proyecciones de Ingresos</h1>
+            </td>
+          </tr>
+          <tr>
+            <td class="body-container">
+              <table class="body-content">
+                <tr>
+                  <td style="text-align: center;">         
+                    <img src="data:image/png;base64,@{outputs('Run_script')?['body/result/base64']}"/>
+                  </td>
+                </tr>
+              </table>
+            </td> 
+          </tr>
+          <!-- Espacio entre cuerpos -->
+          <tr>
+            <td class="body-space"></td>
+          </tr>
+          <tr>
+            <td class="body-container">
+              <table class="body-content1">
+                <tr>
+                  <td>
+                    <p>
+                      Buen día, compartimos las Proyecciones de ingresos. <br>
+                      <hr>
+                    </p>
+                    <strong>@{concat(outputs('List_rows')?['body/value']?[0]?['PRESENTE'])}</strong><br>
+                    <p style="margin-left: 0px; font-weight: bold;">Proyección millones de pesos - (%Cobertura Presupuestal)</p>
+                    <p style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[1]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; Gobierno  @{concat(outputs('List_rows')?['body/value']?[2]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; Empresas @{concat(outputs('List_rows')?['body/value']?[3]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[4]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[5]?['PRESENTE'])}</p>
+                    <br>
+                    <strong>Ingresos Reventa</strong><br>
+                    <p style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[9]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[10]?['PRESENTE'])}</p>
+                    <p style="margin-left: 80px;">&#x25E6; @{concat(outputs('List_rows')?['body/value']?[11]?['PRESENTE'])}</p>
+                    <p style="margin-left: 80px;">&#x25E6; @{concat(outputs('List_rows')?['body/value']?[12]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[13]?['PRESENTE'])}</p>
+                    <p style="margin-left: 80px;">&#x25E6; @{concat(outputs('List_rows')?['body/value']?[14]?['PRESENTE'])}</p>
+                    <p style="margin-left: 80px;">&#x25E6; @{concat(outputs('List_rows')?['body/value']?[15]?['PRESENTE'])}</p>
+                    <br>
+                    <strong>Mayoristas</strong><br>
+                    <p style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[20]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[21]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[22]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[23]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[24]?['PRESENTE'])}</p>
+                    <br>
+                    <strong>Moviles</strong><br>
+                    <p style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[27]?['PRESENTE'])}</p>
+                    <p style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[28]?['PRESENTE'])}</p>
+                    <strong><br></strong>
+                    <div style="text-align: center;">
+                      <a href="@{concat(outputs('List_rows')?['body/value']?[7]?['PRESENTE'])}" class="blue-button" target="_blank"><strong>Detalles Proyección</strong></a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Fin CORREOS-->
+          <tr>
+            <td class="footer">
+              <table>
+                <tr>
+                  <td>
+                    <img href='https://postimg.cc/FY7fyT3k' target='_blank'><img src='https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png' border='0' alt='LOGO-ETB-1' width="50">
+                  </td>
+                  <td style="display: table-cell; flex-grow: 1;">
+                    <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Empresa de Telecomunicaciones de Bogotá S.A.</p>
+                    <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Direccion Control y Gestion Operativa</p>
+                    <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right; font-weight: bold;">Grupo Inteligencia Comercial</p>
+                    <p class="link" style="text-align: right;"></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

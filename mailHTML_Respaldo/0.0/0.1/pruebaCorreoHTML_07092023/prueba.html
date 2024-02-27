@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla de Correo</title>
+<style>
+  /* Estilos generales */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: segoe ui;
+    background-color: #FFFFFF; /* Fondo de abajo */
+  }
+
+  /* Fondo gris para todo el contenido */
+  .content-background {
+    background-color: #FFFFFF; /* Fondo arriba*/
+    padding: 10px; /* estrecho vertical */
+  }
+
+  /* Borde alrededor del contenido */
+  .content-border {
+    border: 10px solid #FFFFFF; /* Borde gris */
+    border-radius: 7px; /* Bordes redondeados */
+    padding: 10px; /* mover arriba o abajo */
+  }
+
+  /* Contenedor principal */
+  .container {
+    max-width: 750px;px;
+    margin: 0 auto;
+    padding: 0; /* Eliminamos el padding aquí */
+    background-color: #F2F2F2;/* Fondo del html*/
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  /* Encabezado */
+  .header {
+    display: flex; /* Alineamos elementos en línea */
+    align-items: center; /* Centramos verticalmente */
+    justify-content: space-between; /* Espacio entre elementos */
+    margin-bottom: 0; /* Ajustamos el margen aquí */
+    padding: 10px; /* Agregamos padding aquí */
+  }
+
+  /* Logotipos en el encabezado */
+  .logo {
+    margin-right: 01px; /* Margen entre imagen y texto */
+  }
+
+  /* Título */
+  .title {
+    background-color: #214780; /* Azul */
+    color: #ffffff; /* Texto en blanco */
+    font-size: 10px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 0; /* Ajustamos el margen aquí */
+  }
+
+  /* Contenedor del cuerpo */
+  .body-container {
+    border-radius: 1px;
+    padding: 17px; /* Ajusta el margen interno */
+    margin: 7px 0; /* Margen superior e inferior */
+  }
+
+  /* Cuerpo del correo */
+  .body-content {
+    background-color: #FBFCFC; /* Fondo Cuerpo*/
+    border-radius: 10px;
+    padding: 5px; /* Margen interno */
+  }
+
+  /* Espacio entre cuerpos */
+  .body-space {
+    margin-bottom: 20px; /* Espacio entre cuerpos */
+  }
+
+  /* Pie de página */
+  .footer {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    background-color: #F2F2F2; /* Fondo pie pagina */
+    color: #ffffff; /* Texto en blanco */
+  }
+
+  /* Estilo para el logo en el pie de página */
+  .footer-logo {
+    margin-right: -60px; /* Espacio entre el logo y el texto */
+    width: 50px; /* Ancho del logo */
+  }
+
+  /* Estilo para el texto en el pie de página */
+  .footer-text {
+    flex-grow: 10; /* El texto ocupará todo el espacio disponible */
+    font-size: 1o0px;
+  } 
+
+ .footer p {
+    padding-left: 450px; /* Puedes ajustar el valor según tus preferencias */
+  }
+
+  .link {
+    margin: 3px 0; 
+    font-size: 10px;
+  }
+
+  /* Media query para dispositivos móviles */
+  @media screen and (max-width: 600px) {
+    .container {
+      max-width: 200%; /*  dispositivos móviles */
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="content-background">
+    <div class="content-border">
+      <div class="container">
+        <div class="header"> 
+          <div>
+            <img class="logo" href='https://postimg.cc/FY7fyT3k' target='_blank'><img src='https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png' border='0' alt='LOGO-ETB-1'/  width="70">
+            <img class="logo logo-second" href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Vk4bhC7H/VP-Empresas-y-Ciudades-Inteligentes-1.png' border='0' alt='VP-Empresas-y-Ciudades-Inteligentes-1' alt="Logo 2" width="270">
+          </div>   
+          <p style="margin: 3px 0; color: black; font-size: 20px;">Direccion Control y Gestion Operativa<br><span style="font-weight: bold;">Grupo Inteligencia Comercial</span></p>
+        </div>
+        <div class="title">
+          <h1>Proyecciones de Ingresos</h1>
+        </div>
+        <div class="body-container">
+          <div class="body-content">
+            <p>
+          Buen día se comparte archivo de la PDC de @{formatDateTime(parseDateTime(triggerBody()['key-button-date']), 'MMM yyyy', 'es')}<br>
+<hr>
+<strong></strong><strong>@{concat(outputs('List_rows')?['body/value']?[0]?['PRESENTE'] )}</strong><strong></strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp @{concat(outputs('List_rows')?['body/value']?[1]?['PRESENTE'] )}
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[2]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[3]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[5]?['PRESENTE'] )}<br>
+<br>
+<strong>Ingresos Reventa</strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[9]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[10]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[11]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[12]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[13]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[14]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[15]?['PRESENTE'] )}<br>
+<strong>Negocios Conexion total</strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[17]?['PRESENTE'] )}<br>
+<br>
+<strong>Mayoristas</strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[20]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[21]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[22]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[23]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[24]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<strong>Moviles</strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[27]?['PRESENTE'] )}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(outputs('List_rows')?['body/value']?[28]?['PRESENTE'])}<br>
+<strong><br>
+
+
+
+            </p>
+          </div>
+          <!-- Espacio entre cuerpos -->
+          <div class="body-space"></div>
+          <!-- Segundo cuerpo de correo duplicado -->
+          <div class="body-content">
+            <p>
+             
+<strong>Cierre Mes Anterior</strong><br>
+<hr>
+</strong><strong>@{concat(
+outputs('List_rows_C')?['body/value']?[0]?['CIERRE'])}</strong><strong></strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[1]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[2]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[3]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[4]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[5]?['CIERRE'])}<br>
+<strong><br>
+Ingresos Reventa<br>
+</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[9]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[10]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[11]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[12]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[13]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[14]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[15]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[17]?['CIERRE'])}<strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Mayoristas<br>
+</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[20]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[21]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[22]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[23]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[24]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><br>
+Moviles<br>
+</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[27]?['CIERRE'])}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@{concat(
+outputs('List_rows_C')?['body/value']?[28]?['CIERRE'])}<strong><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</strong>
+
+
+
+          </p>
+          </div>
+          <!-- Fin del segundo cuerpo de correo duplicado -->
+        </div>
+        <div class="footer">
+          <img class="footer-logo"  href='https://postimg.cc/FY7fyT3k' target='_blank'><img src='https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png' border='0' alt='LOGO-ETB-1'/ width="50">
+          <div class="footer-text">
+            <p style="margin: 3px 0; color: black; font-size: 10px;">Empresa de Telecomunicaciones de Bogotá S.A.</p>
+            <p style="margin: 3px 0; color: black; font-size: 10px;">Direccion Control y Gestion Operativa</p>
+            <p style="margin: 3px 0; color: black; font-size: 10px;">Grupo Inteligencia Comercial</p>
+            <p class="link">
+              <a href="https://etb.com/Empresas/home.aspx">Empresas y Ciudades Inteligentes</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+

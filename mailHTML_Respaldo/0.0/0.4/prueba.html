@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla de Correo</title>
+<style>
+  /* general */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: segoe ui;
+    background-color: #FBFCFC;
+  }
+
+  /* Fondo gris para todo el contenido */
+  .content-background {
+    background-color: #FBFCFC;
+    padding: 10px;
+  }
+
+  /* Borde alrededor del contenido */
+  .content-border {
+    border: 10px solid #FBFCFC;
+    border-radius: 7px;
+    padding: 10px;
+  }
+
+  /* ContenedorPrin*/
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  /* Encabezado*/
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding: 10px;
+  }
+
+  /* LogoHeader*/
+  .logo {
+    margin-right: 10px;
+  }
+
+
+  .title {
+    background-color: #214780;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0;
+  }
+
+  /* Contenedor del cuerpo */
+  .body-container {
+    border-radius: 5px;
+    padding: 17px;
+    margin: 1px 0;
+  }
+
+  /* Cuerpo del correo */
+  .body-content {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 1px;
+  }
+
+ /* correo */
+  .body-content1 {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 30px;
+  }
+
+
+
+  .body-space {
+    margin-bottom: 15px;
+  }
+
+  /* Pie de página */
+  .footer {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    background-color: #F2F2F2;
+    color: #ffffff;
+  }
+
+  .link {
+    margin: 3px 0;
+    font-size: 10px;
+  }
+
+ /* botón */
+  .blue-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color:#214780; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    text-decoration: none; /* Elimina subrayado de enlace */
+    border: 2px solid #214780; /* Borde azul */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 10px;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+
+  }
+
+  /* pasar el mouse por encima*/
+  .blue-button:hover {
+    background-color: #005baa; /* Color de fondo azul más oscuro */
+  }
+
+.cobertura-img {
+  width: 500%;
+  max-width: 700px; /* Para mantener el máximo de 200px en caso de pantallas muy grandes */
+  height: auto;
+}
+  /* MOVILES */
+ @media (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+.cobertura-img {
+    width: 500%;
+    max-width: 500%; /* Puede ser 100% o cualquier otro valor según tu diseño */
+    height: auto;
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo.logo-first {
+    width: 70%;
+  }
+
+  .logo.logo-second {
+    width: 70%;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+
+  /* MóvilesBlanco */
+  .blue-button {
+    color: #fff !important;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="content-background">
+    <div class="content-border">
+      <div class="container">
+        <div class="header">
+          <div class="logo-container">
+            <img class="logo logo-first" src="https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png" border="0" alt="LOGO-ETB-1" width="70">
+            <img class="logo logo-second" src="https://i.postimg.cc/Vk4bhC7H/VP-Empresas-y-Ciudades-Inteligentes-1.png" border="0" alt="VP-Empresas-y-Ciudades-Inteligentes-1" alt="Logo 2" width="270">
+          </div>
+          <p style="margin: 10px 0; color: black; font-size: 16px;">Direccion Control y Gestion Operativa<br><span style="font-weight: bold;">Grupo Inteligencia Comercial</span></p>
+        </div>
+        <div class="title">
+          <h1>Proyecciones de Ingresos</h1>
+        </div>
+           <div class="body-container">
+          <div class="body-content">
+          <div style="text-align: center;">
+ <img class="cobertura-img" src="https://raw.githubusercontent.com/juan10448/ImgGraficoMail_v1/60f56e8e9f4ce507876e5763f19039d1030bf00a/Test_Email_02.svg" border="0" alt="LOGO-ETB-1" width="500" >
+
+</div>
+
+          </div> 
+
+          <!-- Espacio entre cuerpos -->
+          <div class="body-space"></div>
+
+
+          <div class="body-content1">
+           <p>
+Buen día se comparte archivo de la PDC de @{formatDateTime(parseDateTime(triggerBody()['key-button-date']), 'MMM yyyy', 'es')}<br>
+<hr>
+            </p>
+<strong></strong><strong>@{concat(outputs('List_rows')?['body/value']?[0]?['PRESENTE'])}</strong><strong></strong><br>
+ <div style="margin-left: 0px; font-weight: bold; ">Proyección millones de pesos - (%Cobertura Presupuestal)</div>
+<div style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[1]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[2]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[3]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[4]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[5]?['PRESENTE'])}</div>
+<br>
+<strong>Ingresos Reventa</strong><br>
+<div style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[9]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[10]?['PRESENTE'])}</div>
+<div style="margin-left: 80px;">@{concat(outputs('List_rows')?['body/value']?[11]?['PRESENTE'])}</div>
+<div style="margin-left: 80px;">@{concat(outputs('List_rows')?['body/value']?[12]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[13]?['PRESENTE'])}</div>
+<div style="margin-left: 80px;">@{concat(outputs('List_rows')?['body/value']?[14]?['PRESENTE'])}</div>
+<div style="margin-left: 80px;">@{concat(outputs('List_rows')?['body/value']?[15]?['PRESENTE'])}</div>
+<br>
+<strong>Mayoristas</strong><br>
+<div style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[20]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[21]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[22]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[23]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[24]?['PRESENTE'])}</div>
+<br>
+<strong>Moviles</strong><br>
+<div style="margin-left: 0px;">@{concat(outputs('List_rows')?['body/value']?[27]?['PRESENTE'])}</div>
+<div style="margin-left: 40px;">&bull; @{concat(outputs('List_rows')?['body/value']?[28]?['PRESENTE'])}</div>
+<strong><br></strong>
+<div style="text-align: center;">
+  <a href="@{concat(outputs('List_rows')?['body/value']?[7]?['PRESENTE'])}" class="blue-button"><strong>Detalles Proyección</strong></a>
+</div>
+
+
+      </div>
+          <!-- Fin CORREOS-->
+        </div>
+        <div class="footer">
+          <img href='https://postimg.cc/FY7fyT3k' target='_blank'><img src='https://i.postimg.cc/FY7fyT3k/LOGO-ETB-1.png' border='0' alt='LOGO-ETB-1' width="50">
+          <div style="flex-grow: 1;">
+            <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Empresa de Telecomunicaciones de Bogotá S.A.</p>
+            <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right;">Direccion Control y Gestion Operativa</p>
+           <p style="margin: 3px 0; color: black; font-size: 10px; text-align: right; font-weight: bold;">Grupo Inteligencia Comercial</p>
+
+            <p class="link" style="text-align: right;">
+		
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
